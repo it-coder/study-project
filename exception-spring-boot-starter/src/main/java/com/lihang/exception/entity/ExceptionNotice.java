@@ -1,5 +1,6 @@
 package com.lihang.exception.entity;
 
+import com.lihang.exception.property.ExceptionSettingProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -53,11 +54,11 @@ public class ExceptionNotice {
      */
     protected List<String> traceInfo;
 
-    public ExceptionNotice(Throwable ex, String filterTrace, Object[] args) {
+    public ExceptionNotice(Throwable ex, Object[] args, String projectName) {
         this.exceptionMessage = parseExceptionMessage(ex);
         this.parames = args == null ? null : Arrays.stream(args).collect(toList());
+        this.project = projectName;
         List<StackTraceElement> list = Arrays.stream(ex.getStackTrace())
-                .filter(x -> x.getClassName().startsWith(filterTrace))
                 .filter(x -> !x.getFileName().equals("<generated>")).collect(toList());
         if (list.size() > 0) {
             this.traceInfo = list.stream().map(x -> x.toString()).collect(toList());

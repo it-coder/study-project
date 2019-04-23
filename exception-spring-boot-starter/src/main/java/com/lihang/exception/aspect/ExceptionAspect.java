@@ -27,7 +27,6 @@ public class ExceptionAspect {
     @AfterThrowing(pointcut = "execution(* com.lihang.exception.controller.*.*(..))", throwing = "e")
     public void exceptionNoticeWithMethod(JoinPoint joinPoint, RuntimeException e) {
         log.debug("======================:{} --> {}", joinPoint.getSignature().getName(), joinPoint.getArgs());
-        System.out.println("===================================");
         handleException(e, joinPoint.getSignature().getName(), joinPoint.getArgs());
     }
 

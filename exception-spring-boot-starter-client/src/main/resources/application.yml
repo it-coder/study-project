@@ -1,6 +1,6 @@
 
 exception-handle:
-  project-name: rc-common
+  project-name: com.lihang.exception.client
   email:
     from: ceshi@163.com
     to:

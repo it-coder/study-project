@@ -16,7 +16,7 @@ import com.google.auto.service.AutoService;
 import com.lihang.exception.annotation.EnableExceptionHandle;
 
 /**
- * 注解加载器
+ * 注解处理器
  *
  * @author lih
  * @create 2019-04-22-19:13.
@@ -113,13 +113,12 @@ public class ExceptionAnnoProcessor extends AbstractProcessor {
                 "\n" +
                 "    @AfterThrowing(pointcut = \"" + settings.get(1) + "\", throwing = \"e\")\n" +
                 "    public void exceptionNoticeWithMethod(JoinPoint joinPoint, RuntimeException e) {\n" +
-                "         System.out.println(\"==============\");\n" +
                 "        log.debug(\"======================:{} --> {}\", joinPoint.getSignature().getName(), joinPoint.getArgs());\n" +
                 "        handleException(e, joinPoint.getSignature().getName(), joinPoint.getArgs());\n" +
                 "    }\n" +
                 "\n" +
                 "    private void handleException(RuntimeException exception, String methodName, Object[] args) {\n" +
-                "        System.out.println(\"出现异常：\" + methodName + String.join(\",\", Arrays.stream(args).map(x -> x.toString()).toArray(String[]::new)));\n" +
+                "        log.debug(\"出现异常：\" + methodName + String.join(\",\", Arrays.stream(args).map(x -> x.toString()).toArray(String[]::new)));\n" +
                 "        exceptionHandler.createNotice(exception, methodName, args);\n" +
                 "    }\n" +
                 "\n" +

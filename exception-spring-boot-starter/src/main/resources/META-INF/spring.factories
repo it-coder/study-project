@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lihang.exception.config.ExceptionConfig
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lihang.exception.config.ExceptionAutoConfig

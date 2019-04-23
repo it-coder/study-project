@@ -1,11 +1,8 @@
 package com.lihang.websocket;
 
 import com.lihang.exception.annotation.EnableExceptionHandle;
-import com.lihang.exception.config.ExceptionConfig;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * websocket项目

@@ -12,8 +12,9 @@
     <modules>
         <module>spring-boot-parent</module>
         <module>websocket</module>
-        <module>Multithread</module>
+        <module>multithread</module>
         <module>exception-spring-boot-starter</module>
+        <module>exception-spring-boot-starter-client</module>
     </modules>
 
     <properties>

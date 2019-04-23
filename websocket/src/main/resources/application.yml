@@ -1,13 +1,1 @@
 
-exception-handle:
-  enable-notice: true
-  email:
-    from: a2012lihang@163.com
-    to:
-      - dev_lih@139.com
-spring:
-  mail:
-    host: smtp.163.com
-    port: 25
-    password: a5201314
-    username: a2012lihang@163.com
